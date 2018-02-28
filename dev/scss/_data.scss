@@ -1,0 +1,98 @@
+.data{
+  width: 100%;
+
+  &__item {
+    margin: 2em 0;
+    padding: 0;
+  }
+
+  &__header{
+    display: flex;
+    justify-content:space-between;
+    width: 90%;
+    margin: auto;
+    background: #ccc;
+  }
+
+  &__icon{
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transform-origin: center;
+    transition: transform .2s;
+
+    &:after{
+      content: '\25BC';
+      font-size: 1.5em;
+      align-self: center;
+    }
+
+    &--rotate{
+      transform: rotateX(180deg);
+    }
+  }
+
+  &__title{
+    font-size: 1.1em;
+    margin-left: 1em;
+    padding: .3em;
+  }
+  
+
+  &__info{
+    height: 0;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: all .3s;
+    background: #ccc;
+
+    &--show{
+      height: 150px;
+    }
+  }
+
+  &__text{
+    padding: .5em 1em;
+  }
+}
+
+.dataTable{
+  display: none;
+  @media (min-width: 768px){
+    display: block;
+  }
+
+  &__header, &__data{
+    display: grid;
+    grid-template-columns: 100px 250px 100px 100px 1fr;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__header{
+    background: lightblue;
+  }
+
+  &__data:nth-child(even){
+    background: darkseagreen;
+  }
+  &__data:nth-child(odd){
+    background: darkgrey;
+  }
+
+  &__text{
+    color: black;
+    font-weight: bold;
+  }
+
+  &__graphic{
+
+  }
+}
+
+.graphic{
+  text-align: left;
+}

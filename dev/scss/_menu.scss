@@ -1,0 +1,78 @@
+$height:3px;
+$bg: #d2d4d3;
+
+.top-bar{
+  height: $top-bar-height;
+  background: $bg;
+
+  @media (min-width: 768px){
+    display: none;
+  }
+}
+
+.icon-menu{
+  width: 40px;
+  height: $top-bar-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &__bar{
+    position: relative;
+    width: 30px;
+    height: $height;
+    border-radius: $height/2;
+    background: #333;
+
+    &:after, &:before{
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: $height;
+      border-radius: $height/2;
+      left: 0;
+      background: #333;
+    }
+
+    &:after{
+      top: .5em;
+    }
+
+    &:before{
+      top: -.5em;
+    }
+
+
+    @media (min-width: 768px){
+      display: none;
+    }
+
+  }
+}
+
+.main-menu{
+  position: absolute;
+  list-style: none;
+  background: $bg;
+  margin: 0;
+  padding: 1em;
+  left: -100%;
+  transition: left .5s;
+  text-transform: capitalize;
+
+  &__item{
+    padding: .8em 0;
+  }
+
+  &--show{
+    left: 0;
+  }
+
+  @media (min-width: 768px){
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    left: 0;
+  }
+}
