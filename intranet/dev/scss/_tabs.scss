@@ -1,0 +1,15 @@
+.project-select{
+  width: 85%;
+  margin: 1em auto;
+
+  &__item{
+    cursor: pointer;
+    border-radius: .2em;
+    padding: .5em;
+    background: #aaa;
+  }
+
+  @media (min-width: 768px){
+    display: none;
+  }
+}

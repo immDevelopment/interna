@@ -1,0 +1,32 @@
+block config
+    include ../config/config
+
+doctype html
+html
+    head
+        title #{pageTitle} | #{siteTitle}
+        meta(charset='utf-8')
+        meta(name='description' content=description)
+        meta( name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        link(rel='stylesheet' href='css/normalize.css')
+        link(rel='stylesheet' href='css/styles.css')
+    body
+        block header
+            header.header
+                .top-bar
+                    .icon-menu#icon-menu
+                        .icon-menu__bar
+                nav.main-nav#main-nav
+                    include ../blocks/menu
+
+        main.main
+            block main
+
+        footer.footer
+
+        script(src='js/viewport-dist.js')
+        script(src='js/menu-dist.js')
+        script(src='js/tabs-dist.js')
+        script(src='js/planificacion-dist.js')
+        script(src='js/project-dist.js')
