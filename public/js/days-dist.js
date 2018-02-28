@@ -1,0 +1,1 @@
+"use strict";var today=new Date("01/01/1998");console.log(today.getDate()-14);var getDays=function(t){};
