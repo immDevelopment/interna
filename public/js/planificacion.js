@@ -18,7 +18,11 @@ const respuesta = (xhr) => {
 
     let json = JSON.parse(xhr.responseText);
 
+    console.log(json);
+
     let dataElement = document.getElementById('data');
+
+    let maxDays = 0;
 
     let breakPoint = matchMedia('(min-width: 768px)');
 
