@@ -82,36 +82,27 @@ const respuesta = (xhr) => {
         }
     }
 
-    /*Calculo del proyecto más largo*/
-
     /*Array para objetos con los id y las duraciones*/
-    let durations = [];
+    let durationsObj = [];
 
-    let maxDuration=0;
+    let allDurations=[];
 
     /*Copio en durations todas las duraciones*/
     for(let i=0;i<json.data.length;i++){
-
-        durations[i] = {
+        durationsObj[i] = {
             id: json.data[i].CodigoProyecto,
             duration: json.data[i].duracion
-        }
+        };
 
-        console.log(json.data[i]);
-
-        if(json.data[i].duracion > maxDuration){
-            maxDuration = json.data[i].duracion;
-        }
+        allDurations.push(json.data[i].duracion);
     }
 
-    /*Duración más larga*/
+    let maxDuration = Math.max(...allDurations);
 
-
-
-    let graphics = [...document.querySelectorAll('.graphic')];
-
+    console.log(maxDuration);
 
     const graphicWidth = (id, duration) =>{
+
         let graphic = document.getElementById(id);
 
         /*Calculo de la anchura*/
@@ -122,12 +113,9 @@ const respuesta = (xhr) => {
         graphic.textContent = `${(width.toFixed(2).endsWith('00')) ? width.toFixed(0):width.toFixed(2)}%`;
     }
 
-    for (let data of durations){
+    for (let data of durationsObj){
         graphicWidth(data.id, data.duration);
     }
-
-
-
 }
 
 
