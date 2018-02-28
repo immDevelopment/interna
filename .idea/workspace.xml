@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/dev/js/planificacion.js" afterPath="$PROJECT_DIR$/dev/js/planificacion.js" />
       <change beforePath="$PROJECT_DIR$/dev/pug/blocks/menu.pug" afterPath="$PROJECT_DIR$/dev/pug/blocks/menu.pug" />
+      <change beforePath="$PROJECT_DIR$/dev/pug/templates/template.pug" afterPath="$PROJECT_DIR$/dev/pug/templates/template.pug" />
       <change beforePath="$PROJECT_DIR$/prepros-6.config" afterPath="$PROJECT_DIR$/prepros-6.config" />
       <change beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change beforePath="$PROJECT_DIR$/public/js/planificacion-dist.js" afterPath="$PROJECT_DIR$/public/js/planificacion-dist.js" />
@@ -45,8 +46,8 @@
       <file leaf-file-name="days.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/js/days.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -129,13 +130,13 @@
         <option value="$PROJECT_DIR$/dev/scss/_menu.scss" />
         <option value="$PROJECT_DIR$/dev/scss/_data.scss" />
         <option value="$PROJECT_DIR$/public/js/planificacion.js" />
-        <option value="$PROJECT_DIR$/dev/pug/templates/template.pug" />
         <option value="$PROJECT_DIR$/dev/scss/styles.scss" />
         <option value="$PROJECT_DIR$/dev/scss/_graphics.scss" />
         <option value="$PROJECT_DIR$/dev/pug/index.pug" />
         <option value="$PROJECT_DIR$/dev/pug/blocks/menu.pug" />
         <option value="$PROJECT_DIR$/format.php" />
         <option value="$PROJECT_DIR$/dev/js/planificacion.js" />
+        <option value="$PROJECT_DIR$/dev/pug/templates/template.pug" />
         <option value="$PROJECT_DIR$/dev/js/days.js" />
       </list>
     </option>
@@ -193,7 +194,14 @@
               <item name="gestionInterna" type="b2602c69:ProjectViewProjectNode" />
               <item name="gestionInterna" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pug" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="gestionInterna" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestionInterna" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pug" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -256,7 +264,7 @@
       <workItem from="1519644355097" duration="68000" />
       <workItem from="1519644441126" duration="6990000" />
       <workItem from="1519722367066" duration="25000" />
-      <workItem from="1519809297238" duration="10603000" />
+      <workItem from="1519809297238" duration="12334000" />
     </task>
     <task id="LOCAL-00001" summary="proyecto recién añadido a git">
       <created>1519809374951</created>
@@ -293,19 +301,27 @@
       <option name="project" value="LOCAL" />
       <updated>1519818679499</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Gráfico con los porcentajes. Faltan los dias">
+      <created>1519820124384</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1519820124384</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65673000" />
+    <option name="totallyTimeSpent" value="67404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5031447" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25625" sideWeight="0.49685535" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32708332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1673774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -610,14 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/pug/templates/template.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/scss/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -684,10 +692,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/pug/templates/template.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/days.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding />
         </state>
       </provider>
