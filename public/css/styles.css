@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*Colores*/
 /*Fuentes*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400");
@@ -184,17 +183,10 @@ a {
 
 .graphic {
   margin: .2em 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(220, 20, 60, 0.8);
   border-radius: 5px;
-  width: 100%;
-  height: 10px;
-  position: relative; }
-  .graphic:after {
-    content: '';
-    display: block;
-    width: 10%;
-    /*estilo en línea, cálculo con PHP*/
-    height: 10px;
-    background: #1ba1d1;
-    position: absolute;
-    top: 0; }
+  /*width: Se asigna desde js*/
+  min-height: 10px;
+  position: relative;
+  left: 0;
+  top: 0; }

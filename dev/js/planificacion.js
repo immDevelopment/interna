@@ -63,11 +63,13 @@ const respuesta = (xhr) => {
             dataElement.innerHTML += `
             
             <div class="dataTable__data">
-            <div class="dataTable__text">720170136</div>
-            <div class="dataTable__text">VINILOS ESCAPARATE NB21</div>
-            <div class="dataTable__text">10/10/1000</div>
-            <div class="dataTable__text">10/10/1008</div>
-            <div class="dataTable__graphic graphic" id="graphic"></div>
+            <div class="dataTable__text">${data.CodigoProyecto}</div>
+            <div class="dataTable__text">${data.Proyecto}</div>
+            <div class="dataTable__text">${data.inicio}</div>
+            <div class="dataTable__text">${data.fin}</div>
+            <div class="dataTable__graphic"">
+                <div class="graphic" id="${data.CodigoProyecto}"></div>
+            </div>
           </div>
             `
         }
@@ -79,6 +81,53 @@ const respuesta = (xhr) => {
             let sql = proyectoSQL;
         }
     }
+
+    /*Calculo del proyecto más largo*/
+
+    /*Array para objetos con los id y las duraciones*/
+    let durations = [];
+
+    let maxDuration=0;
+
+    /*Copio en durations todas las duraciones*/
+    for(let i=0;i<json.data.length;i++){
+
+        durations[i] = {
+            id: json.data[i].CodigoProyecto,
+            duration: json.data[i].duracion
+        }
+
+        console.log(json.data[i]);
+
+        if(json.data[i].duracion > maxDuration){
+            maxDuration = json.data[i].duracion;
+        }
+    }
+
+    /*Duración más larga*/
+
+
+
+    let graphics = [...document.querySelectorAll('.graphic')];
+
+
+    const graphicWidth = (id, duration) =>{
+        let graphic = document.getElementById(id);
+
+        /*Calculo de la anchura*/
+
+        let width = (duration * 100) / maxDuration;
+
+        graphic.style.width = `${width}%`;
+        graphic.textContent = `${(width.toFixed(2).endsWith('00')) ? width.toFixed(0):width.toFixed(2)}%`;
+    }
+
+    for (let data of durations){
+        graphicWidth(data.id, data.duration);
+    }
+
+
+
 }
 
 
