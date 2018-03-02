@@ -1,6 +1,12 @@
 // objeto XMLHttpRequest
 let xhr = new XMLHttpRequest();
 
+let maxDuration;
+
+const assignMaxDuration = (duration) =>{
+    maxDuration=duration;
+};
+
 // Obtenemos datos
 const dataGet = (get) => {
 
@@ -59,7 +65,9 @@ const respuesta = (xhr) => {
                     <div class="dataTable__text">Proyecto</div>
                     <div class="dataTable__text">Fecha Aprobación</div>
                     <div class="dataTable__text">Fecha Fin</div>
-                    <div class="dataTable__graphic">Poner Dias</div>
+                    <div class="dataTable__graphic">
+                        <div class="months" id="months"></div>
+                    </div>
                 </div>
         `;
 
@@ -71,7 +79,7 @@ const respuesta = (xhr) => {
             <div class="dataTable__text">${data.Proyecto}</div>
             <div class="dataTable__text">${data.inicio}</div>
             <div class="dataTable__text">${data.fin}</div>
-            <div class="dataTable__graphic"">
+            <div class="dataTable__graphic">
                 <div class="graphic" id="${data.CodigoProyecto}"></div>
             </div>
           </div>
@@ -105,9 +113,7 @@ const respuesta = (xhr) => {
     }
 
     /*Calculo la máxima duración*/
-    let maxDuration = Math.max(...allDurations);
-
-    console.log(maxDuration);
+    assignMaxDuration(Math.max(...allDurations));
 
     /*Función para calcular el ancho del gráfico*/
     const graphicWidth = (id, duration) =>{
@@ -128,6 +134,5 @@ const respuesta = (xhr) => {
         graphicWidth(data.id, data.duration);
     }
 };
-
 
 dataGet("proyecto");

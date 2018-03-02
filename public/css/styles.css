@@ -11,15 +11,16 @@ h1 {
   text-align: center; }
 
 a {
-  color: #1ba1d1;
+  color: #83AF9B;
   text-decoration: none;
-  cursor: pointer; }
+  cursor: pointer;
+  font-weight: bold; }
   a:hover {
     text-decoration: underline; }
 
 .top-bar {
   height: 40px;
-  background: #d2d4d3; }
+  background: #ca1498; }
   @media (min-width: 768px) {
     .top-bar {
       display: none; } }
@@ -42,7 +43,7 @@ a {
     width: 30px;
     height: 3px;
     border-radius: 1.5px;
-    background: #333; }
+    background: #C8C8A9; }
     .icon-menu__bar:after, .icon-menu__bar:before {
       content: '';
       position: absolute;
@@ -50,7 +51,7 @@ a {
       height: 3px;
       border-radius: 1.5px;
       left: 0;
-      background: #333; }
+      background: #C8C8A9; }
     .icon-menu__bar:after {
       top: .5em; }
     .icon-menu__bar:before {
@@ -62,9 +63,9 @@ a {
 .main-menu {
   position: absolute;
   list-style: none;
-  background: #d2d4d3;
+  background: #ca1498;
   margin: 0;
-  padding: 1em;
+  padding: .5em;
   left: -100%;
   -webkit-transition: left .5s;
   -o-transition: left .5s;
@@ -83,7 +84,8 @@ a {
       -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
       justify-content: space-evenly;
-      left: 0; } }
+      left: 0;
+      margin-bottom: .5em; } }
 
 .project-select {
   width: 85%;
@@ -163,19 +165,21 @@ a {
       display: block; } }
   .dataTable__header, .dataTable__data {
     display: grid;
-    grid-template-columns: 100px 250px 100px 100px 1fr;
+    grid-template-columns: 100px 300px 200px 100px 1fr;
+    grid-template-rows: 20px;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     text-align: center; }
   .dataTable__header {
-    background: lightblue; }
+    background: #83AF9B;
+    padding: 1em 0; }
   .dataTable__data:nth-child(even) {
-    background: darkseagreen; }
+    background: lightgray; }
   .dataTable__data:nth-child(odd) {
-    background: darkgrey; }
+    background: whitesmoke; }
   .dataTable__text {
-    color: black;
+    color: #282D31;
     font-weight: bold; }
 
 .graphic {
@@ -190,3 +194,16 @@ a {
   position: relative;
   left: 0;
   top: 0; }
+
+/*
+.calendar{
+  display: grid;
+  width: 80%;
+  overflow: auto;
+
+  &__months{
+    background: lightblue;
+    display: flex;
+    width: 4700px;
+  }
+}*/

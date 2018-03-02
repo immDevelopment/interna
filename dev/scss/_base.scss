@@ -8,9 +8,10 @@ h1{
 }
 
 a{
-  color: $main-color;
+  color: $third-color;
   text-decoration: none;
   cursor: pointer;
+  font-weight: bold;
 
   &:hover{
     text-decoration: underline;

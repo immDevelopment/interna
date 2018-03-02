@@ -67,24 +67,26 @@
 
   &__header, &__data{
     display: grid;
-    grid-template-columns: 100px 250px 100px 100px 1fr;
+    grid-template-columns: 100px 300px 200px 100px 1fr;
+    grid-template-rows: 20px;
     align-items: center;
     text-align: center;
   }
 
   &__header{
-    background: lightblue;
+    background: $third-color;
+    padding: 1em 0;
   }
 
   &__data:nth-child(even){
-    background: darkseagreen;
+    background: lightgray;
   }
   &__data:nth-child(odd){
-    background: darkgrey;
+    background: whitesmoke;
   }
 
   &__text{
-    color: black;
+    color: $dark-color;
     font-weight: bold;
   }
 
