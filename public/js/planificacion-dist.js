@@ -7,6 +7,8 @@ var xhr = new XMLHttpRequest();
 
 var maxDuration = void 0;
 
+var months = document.getElementById('months');
+
 var assignMaxDuration = function assignMaxDuration(duration) {
     maxDuration = duration;
 };
@@ -68,16 +70,15 @@ var respuesta = function respuesta(xhr) {
 
         /*Si es desktop*/
     } else {
-
-        dataElement.innerHTML += '\n            <div class="dataTable">\n                <div class="dataTable__header">\n                    <div class="dataTable__text">ID proyecto</div>\n                    <div class="dataTable__text">Proyecto</div>\n                    <div class="dataTable__text">Fecha Aprobaci\xF3n</div>\n                    <div class="dataTable__text">Fecha Fin</div>\n                    <div class="dataTable__graphic">\n                        <div class="months" id="months"></div>\n                    </div>\n                </div>\n        ';
-
         var _iteratorNormalCompletion2 = true;
         var _didIteratorError2 = false;
         var _iteratorError2 = undefined;
 
         try {
+
             for (var _iterator2 = json.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
                 var _data = _step2.value;
+
 
                 dataElement.innerHTML += '\n            \n            <div class="dataTable__data">\n            <div class="dataTable__text">' + _data.CodigoProyecto + '</div>\n            <div class="dataTable__text">' + _data.Proyecto + '</div>\n            <div class="dataTable__text">' + _data.inicio + '</div>\n            <div class="dataTable__text">' + _data.fin + '</div>\n            <div class="dataTable__graphic">\n                <div class="graphic" id="' + _data.CodigoProyecto + '"></div>\n            </div>\n          </div>\n            ';
             }
@@ -168,3 +169,77 @@ var respuesta = function respuesta(xhr) {
 };
 
 dataGet("proyecto");
+
+/*################################CALENDARIO####################################*/
+/*CALENDARIO*/
+
+/*Elementos HTML*/
+
+/*Obtener fechas*/
+var monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+var currentDate = new Date();
+var currentDay = currentDate.getDate();
+var monthNumber = currentDate.getMonth();
+var currentYear = currentDate.getFullYear();
+
+/*duración prueba*/
+var duration = 299;
+
+/*Saber total de días de cada mes*/
+var getTotalDays = function getTotalDays(month) {
+
+    if (month === 0 || month === 2 || month === 4 || month === 6 || month === 7 || month === 9 || month === 11) {
+        return 31;
+    } else if (month === 3 || month === 5 || month === 8 || month === 10) {
+        return 30;
+    } else {
+
+        return isLeap() ? 29 : 28;
+    }
+};
+
+/*Bisiesto true/false*/
+var isLeap = function isLeap() {
+    return currentYear % 100 !== 0 && currentYear % 4 === 0 || currentYear % 400 === 0;
+};
+
+console.log(months);
+
+var writeMonth = function writeMonth(name, days) {
+    months.innerHTML += '\n            <div class="month">\n                <div class="month__name">' + name + '</div>\n                <div class="month__days">' + days.join(' ') + '</div>\n            </div>';
+};
+
+var startDay = function startDay() {
+    var init = currentDay - 17;
+    var start = 0;
+    if (init <= 0) {
+        start = getTotalDays(monthNumber) - Math.abs(init);
+        monthNumber -= 1;
+    } else {
+        start = init;
+    }
+
+    return start;
+};
+
+var getDaysToPrint = function getDaysToPrint() {
+    var dayToPrint = startDay();
+    var daysArray = [];
+
+    for (var i = 0; i < 300; i++) {
+
+        var endMonth = getTotalDays(monthNumber);
+
+        if (dayToPrint <= endMonth) {
+            daysArray.push(dayToPrint);
+            dayToPrint++;
+        } else {
+            writeMonth(monthNames[monthNumber], daysArray);
+            daysArray = [];
+            monthNumber++;
+            dayToPrint = 1;
+        }
+    }
+};
+
+getDaysToPrint();

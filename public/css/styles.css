@@ -160,7 +160,7 @@ a {
 
 .dataTable {
   display: none; }
-  @media (min-width: 768px) {
+  @media (min-width: 1080px) {
     .dataTable {
       display: block; } }
   .dataTable__header, .dataTable__data {
@@ -181,9 +181,26 @@ a {
   .dataTable__text {
     color: #282D31;
     font-weight: bold; }
+  .dataTable__graphic {
+    display: grid; }
 
 .graphic {
   text-align: left; }
+
+.months {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  overflow: auto; }
+
+.month {
+  text-align: center;
+  display: table;
+  font-size: .7em; }
 
 .graphic {
   margin: .2em 0;

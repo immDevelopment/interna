@@ -1,20 +1,21 @@
-/*CALENDARIO*/
+/*
+/!*CALENDARIO*!/
 
 
-/*Elementos HTML*/
+/!*Elementos HTML*!/
 const months = document.getElementById('months');
 
-/*Obtener fechas*/
+/!*Obtener fechas*!/
 const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre','Octubre', 'Noviembre', 'Diciembre'];
 const currentDate = new Date();
 const currentDay = currentDate.getDate();
 let monthNumber = currentDate.getMonth();
 const currentYear = currentDate.getFullYear();
 
-/*duración prueba*/
+/!*duración prueba*!/
 let duration = 299;
 
-/*Saber total de días de cada mes*/
+/!*Saber total de días de cada mes*!/
 const getTotalDays = (month) => {
 
     if (month === 0 || month === 2 || month === 4 || month === 6 || month === 7 || month === 9 || month === 11) {
@@ -29,7 +30,7 @@ const getTotalDays = (month) => {
     }
 };
 
-/*Bisiesto true/false*/
+/!*Bisiesto true/false*!/
 const isLeap = () =>{
     return ((currentYear % 100 !==0) && (currentYear % 4 === 0) || (currentYear % 400 === 0));
 };
@@ -45,7 +46,7 @@ const writeMonth = (name, days) =>{
 };
 
 const startDay=()=>{
-    let init = currentDay - 21;
+    let init = currentDay - 17;
     let start = 0;
     if(init <= 0){
         start = (getTotalDays(monthNumber) - Math.abs(init));
@@ -57,21 +58,26 @@ const startDay=()=>{
     return start;
 };
 
-let dayToPrint = startDay();
-let daysArray = [];
+const getDaysToPrint = ()=> {
+    let dayToPrint = startDay();
+    let daysArray = [];
 
-for (let i = 0; i<300;i++){
+    for (let i = 0; i < 300; i++) {
 
-    let endMonth = getTotalDays(monthNumber);
+        let endMonth = getTotalDays(monthNumber);
 
-    if(dayToPrint<=endMonth) {
-        daysArray.push(dayToPrint);
-        dayToPrint++;
+        if (dayToPrint <= endMonth) {
+            daysArray.push(dayToPrint);
+            dayToPrint++;
 
-    }else{
-        writeMonth(monthNames[monthNumber],daysArray);
-        daysArray = [];
-        monthNumber++;
-        dayToPrint=1;
+        } else {
+            writeMonth(monthNames[monthNumber], daysArray);
+            daysArray = [];
+            monthNumber++;
+            dayToPrint = 1;
+        }
     }
 }
+
+getDaysToPrint();
+*/

@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c33d3c6-2271-4b1c-897a-6ef6a8f046b9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/dev/js/writeCalendar.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dev/js/days.js" afterPath="$PROJECT_DIR$/dev/js/days.js" />
+      <change beforePath="$PROJECT_DIR$/dev/js/days.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/dev/js/planificacion.js" afterPath="$PROJECT_DIR$/dev/js/planificacion.js" />
-      <change beforePath="$PROJECT_DIR$/dev/pug/config/config.pug" afterPath="$PROJECT_DIR$/dev/pug/config/config.pug" />
+      <change beforePath="$PROJECT_DIR$/dev/js/writeCalendar.js" afterPath="$PROJECT_DIR$/dev/js/writeCalendar.js" />
       <change beforePath="$PROJECT_DIR$/dev/pug/index.pug" afterPath="$PROJECT_DIR$/dev/pug/index.pug" />
-      <change beforePath="$PROJECT_DIR$/dev/pug/templates/template.pug" afterPath="$PROJECT_DIR$/dev/pug/templates/template.pug" />
-      <change beforePath="$PROJECT_DIR$/dev/scss/_base.scss" afterPath="$PROJECT_DIR$/dev/scss/_base.scss" />
       <change beforePath="$PROJECT_DIR$/dev/scss/_data.scss" afterPath="$PROJECT_DIR$/dev/scss/_data.scss" />
-      <change beforePath="$PROJECT_DIR$/dev/scss/_graphics.scss" afterPath="$PROJECT_DIR$/dev/scss/_graphics.scss" />
-      <change beforePath="$PROJECT_DIR$/dev/scss/_menu.scss" afterPath="$PROJECT_DIR$/dev/scss/_menu.scss" />
-      <change beforePath="$PROJECT_DIR$/dev/scss/_variables.scss" afterPath="$PROJECT_DIR$/dev/scss/_variables.scss" />
       <change beforePath="$PROJECT_DIR$/prepros-6.config" afterPath="$PROJECT_DIR$/prepros-6.config" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" afterPath="$PROJECT_DIR$/public/css/styles.css" />
       <change beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change beforePath="$PROJECT_DIR$/public/js/days-dist.js" afterPath="$PROJECT_DIR$/public/js/days-dist.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/days-dist.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/public/js/planificacion-dist.js" afterPath="$PROJECT_DIR$/public/js/planificacion-dist.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,53 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="planificacion.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/planificacion.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="68" column="56" lean-forward="false" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
-              <folding>
-                <marker date="1519989284179" expanded="true" signature="876:1406" ph="..." />
-                <marker date="1519989284179" expanded="true" signature="917:1047" ph="..." />
-                <marker date="1519989284179" expanded="true" signature="1086:1393" ph="..." />
-                <marker date="1519989284179" expanded="true" signature="1653:2144" ph="..." />
-                <marker date="1519989284179" expanded="true" signature="1701:2135" ph="..." />
-                <marker date="1519989284179" expanded="true" signature="2022:2112" ph="..." />
-                <marker date="1519989284179" expanded="true" signature="2079:2085" ph="..." />
-                <marker date="1519989284179" expanded="true" signature="2279:2579" ph="..." />
-                <marker date="1519989284179" expanded="true" signature="2279:2670" ph="..." />
-                <marker date="1519989284179" expanded="true" signature="2279:2687" ph="..." />
-                <marker date="1519989284179" expanded="true" signature="2579:2670" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="writeCalendar.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/js/writeCalendar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1519988906220" expanded="true" signature="1049:1176" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_graphics.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/scss/_graphics.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -125,14 +73,14 @@
         <option value="$PROJECT_DIR$/dev/scss/_variables.scss" />
         <option value="$PROJECT_DIR$/dev/scss/_base.scss" />
         <option value="$PROJECT_DIR$/dev/scss/_menu.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/_data.scss" />
         <option value="$PROJECT_DIR$/dev/js/days.js" />
-        <option value="$PROJECT_DIR$/dev/pug/index.pug" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/dev/scss/_graphics.scss" />
-        <option value="$PROJECT_DIR$/dev/js/writeCalendar.js" />
         <option value="$PROJECT_DIR$/dev/pug/templates/template.pug" />
+        <option value="$PROJECT_DIR$/dev/js/writeCalendar.js" />
+        <option value="$PROJECT_DIR$/dev/pug/index.pug" />
         <option value="$PROJECT_DIR$/dev/js/planificacion.js" />
+        <option value="$PROJECT_DIR$/dev/scss/_data.scss" />
       </list>
     </option>
   </component>
@@ -153,7 +101,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="972" />
+    <option name="y" value="59" />
     <option name="width" value="843" />
     <option name="height" value="1087" />
   </component>
@@ -209,6 +158,12 @@
               <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pug" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="gestionInterna" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestionInterna" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scss" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="gestionInterna" type="b2602c69:ProjectViewProjectNode" />
@@ -285,7 +240,8 @@
       <workItem from="1519809297238" duration="17929000" />
       <workItem from="1519903441466" duration="4390000" />
       <workItem from="1519983055147" duration="839000" />
-      <workItem from="1519987797620" duration="2379000" />
+      <workItem from="1519987797620" duration="7089000" />
+      <workItem from="1520330065718" duration="424000" />
     </task>
     <task id="LOCAL-00001" summary="proyecto recién añadido a git">
       <created>1519809374951</created>
@@ -343,21 +299,28 @@
       <option name="project" value="LOCAL" />
       <updated>1519822273827</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Gráfico con los porcentajes. Dias test">
+      <created>1519990931377</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1519990931377</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80607000" />
+    <option name="totallyTimeSpent" value="85741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09701493" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13965885" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3322818" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -366,10 +329,10 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -429,7 +392,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="proyecto recién añadido a git" />
     <MESSAGE value="Gráfico con los porcentajes. Faltan los dias" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gráfico con los porcentajes. Faltan los dias" />
+    <MESSAGE value="Gráfico con los porcentajes. Dias test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gráfico con los porcentajes. Dias test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -550,7 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-847">
           <caret line="136" column="34" lean-forward="false" selection-start-line="136" selection-start-column="34" selection-end-line="136" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_data.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="70" column="25" lean-forward="false" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/scss/_base.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -629,13 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1875">
           <caret line="75" column="21" lean-forward="false" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/days.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -651,14 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/planificacion-dist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5100">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/pug/templates/template.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="785">
@@ -667,10 +608,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/pug/index.pug">
+    <entry file="file://$PROJECT_DIR$/dev/js/writeCalendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="1650">
+          <caret line="66" column="44" lean-forward="false" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+          <folding>
+            <marker date="1519991697563" expanded="true" signature="1064:1191" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/planificacion-dist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="218" column="59" lean-forward="true" selection-start-line="218" selection-start-column="59" selection-end-line="218" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -679,38 +630,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="12" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/pug/index.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2510">
+          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+          <folding>
+            <element signature="e#1737#2726#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/planificacion.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="68" column="56" lean-forward="false" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
+        <state relative-caret-position="3775">
+          <caret line="175" column="12" lean-forward="false" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
           <folding>
-            <marker date="1519989284179" expanded="true" signature="876:1406" ph="..." />
-            <marker date="1519989284179" expanded="true" signature="917:1047" ph="..." />
-            <marker date="1519989284179" expanded="true" signature="1086:1393" ph="..." />
-            <marker date="1519989284179" expanded="true" signature="1653:2144" ph="..." />
-            <marker date="1519989284179" expanded="true" signature="1701:2135" ph="..." />
-            <marker date="1519989284179" expanded="true" signature="2022:2112" ph="..." />
-            <marker date="1519989284179" expanded="true" signature="2079:2085" ph="..." />
-            <marker date="1519989284179" expanded="true" signature="2279:2579" ph="..." />
-            <marker date="1519989284179" expanded="true" signature="2279:2670" ph="..." />
-            <marker date="1519989284179" expanded="true" signature="2279:2687" ph="..." />
-            <marker date="1519989284179" expanded="true" signature="2579:2670" ph="..." />
+            <element signature="e#240#465#0" expanded="false" />
+            <element signature="e#4118#4406#0" expanded="false" />
+            <element signature="e#4453#4551#0" expanded="false" />
+            <element signature="e#4836#5056#0" expanded="false" />
+            <marker date="1520238268274" expanded="true" signature="925:1455" ph="..." />
+            <marker date="1520238268274" expanded="true" signature="966:1096" ph="..." />
+            <marker date="1520238268274" expanded="true" signature="1135:1442" ph="..." />
+            <marker date="1520238268274" expanded="true" signature="1764:2064" ph="..." />
+            <marker date="1520238268274" expanded="true" signature="1764:2155" ph="..." />
+            <marker date="1520238268274" expanded="true" signature="1764:2172" ph="..." />
+            <marker date="1520238268274" expanded="true" signature="2064:2155" ph="..." />
+            <marker date="1520238268274" expanded="true" signature="4669:4808" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/writeCalendar.js">
+    <entry file="file://$PROJECT_DIR$/dev/scss/_data.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1519988906220" expanded="true" signature="1049:1176" ph="..." />
-          </folding>
+        <state relative-caret-position="825">
+          <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/days.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
