@@ -2,6 +2,153 @@
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+/*################################CALENDARIO####################################*/
+
+/*CALENDARIO*/
+/*Variables para imprimir el nombre de los meses*/
+var monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+/*Contenedor donde escribir los nombres de los meses*/
+var monthElement = document.getElementById('months');
+
+/*Contenedor donde escribir los días*/
+var daysElement = document.getElementById('days');
+
+/*Contenedor donde escribir las celdas que forman el gráfico*/
+var cellsElement = document.getElementById('cells');
+
+/*Fecha de referencia para escribir el calendario*/
+var currentDate = new Date();
+
+/*Día actual*/
+var currentDay = currentDate.getDate();
+
+/*Mes actual*/
+var currentMonth = currentDate.getMonth();
+
+/*Año actual*/
+var currentYear = currentDate.getFullYear();
+
+/*Saber total de días de cada mes*/
+var getTotalDays = function getTotalDays(month) {
+
+    if (month === 0 || month === 2 || month === 4 || month === 6 || month === 7 || month === 9 || month === 11) {
+        return 31;
+    } else if (month === 3 || month === 5 || month === 8 || month === 10) {
+        return 30;
+    } else {
+
+        return isLeap() ? 29 : 28;
+    }
+};
+
+/*Bisiesto true/false*/
+var isLeap = function isLeap() {
+    return currentYear % 100 !== 0 && currentYear % 4 === 0 || currentYear % 400 === 0;
+};
+
+var writeMonth = function writeMonth(month, padding) {
+    monthElement.innerHTML += '\n        <div class="month" id="' + month + '">' + month + '</div>\n    ';
+    getWidthElement(month, padding);
+};
+
+/*Escribir los días. Pasamos un array con los días del mes*/
+var writeDays = function writeDays(days, month) {
+    var today = new Date();
+
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = days[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var day = _step.value;
+
+            if (day === today.getDate() && month === today.getMonth()) {
+                daysElement.innerHTML += '\n                <span class="day today">' + day + '</span>\n            ';
+            } else {
+                daysElement.innerHTML += '\n                <span class="day">' + day + '</span>\n            ';
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+};
+
+/*Escribo las celdas para dibujar el gráfico*/
+var writeCells = function writeCells(id, duration) {
+
+    for (var i = 0; i < duration; i++) {
+        cellsElement.innerHTML += '\n            <span class="cell"></span>\n        ';
+    }
+};
+
+/*Saber en qué día comienza el gráfico*/
+var startDay = function startDay() {
+    var init = currentDay - 17;
+    var start = 0;
+    if (init <= 0) {
+        start = getTotalDays(currentMonth) - Math.abs(init);
+        currentMonth -= 1;
+    } else {
+        start = init;
+    }
+
+    return start;
+};
+
+/*Obtener los días que tiene que imprimir*/
+var getDaysToPrint = function getDaysToPrint() {
+
+    /*Día en el que comienza el gráfico*/
+    var dayToPrint = startDay();
+    /*Array para guardar los días*/
+    var daysArray = [];
+
+    /*Bucle que da tantas vueltas como máxima duración haya*/
+    for (var i = 0; i < 300; i++) {
+        /*Fin del mes*/
+        var endMonth = getTotalDays(currentMonth);
+
+        /*Si el día a imprimir aún no es el final añado el día al array*/
+        if (dayToPrint <= endMonth) {
+            daysArray.push(dayToPrint);
+            dayToPrint++;
+
+            /*Si es el último día del mes envío el array a imprimir, vacío el array, sumo un mes para imprimir el siguiente y reinicio el día a imprimir a 1*/
+        } else {
+            writeDays(daysArray, currentMonth);
+            /*Escribo el nombre del mes en la cabecera del gráfico*/
+            writeMonth(monthNames[currentMonth], daysArray.length);
+            daysArray = [];
+            currentMonth++;
+            dayToPrint = 1;
+        }
+    }
+};
+
+var getWidthElement = function getWidthElement(element, padding) {
+
+    var monthBox = document.getElementById('' + element);
+
+    monthBox.style.paddingRight = padding * 30 - monthBox.offsetWidth + 'px';
+};
+
+getDaysToPrint();
+
+/*######################JSON###########################################*/
+
 // objeto XMLHttpRequest
 var xhr = new XMLHttpRequest();
 
@@ -31,94 +178,46 @@ var respuesta = function respuesta(xhr) {
 
     var json = JSON.parse(xhr.responseText);
 
-    var dataElement = document.getElementById('data');
+    console.log(json);
 
-    /*Funcion en viewport.js para saber si es movil/tablet o desktop*/
-    var breakPoint = matchMedia('(min-width: 768px)');
+    var projectElement = document.getElementById('projects');
 
-    /*Si es movil...*/
-    if (!changeSize(breakPoint)) {
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
+    var _iteratorNormalCompletion2 = true;
+    var _didIteratorError2 = false;
+    var _iteratorError2 = undefined;
 
+    try {
+        for (var _iterator2 = json.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+            var data = _step2.value;
+
+
+            projectElement.innerHTML += '\n\n            <div class="data__item">\n              <div class="data__header">\n              <h2 class="data__title">' + data.CodigoProyecto + ' ' + data.Proyecto + '</h2><i class="data__icon"></i>\n              </div>\n              <div class="data__info">\n              \n            <!--Datos proyecto-->\n            \n              <div class="data__text">Fecha Aprobaci\xF3n ' + data.inicio + '</div>\n              <div class="data__text">Fecha Prevista Fin ' + data.fin + '</div>\n              <div class="data__text">Duraci\xF3n ' + data.duracion + ' d\xEDas</div>\n            </div>\n            ';
+        }
+    } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+    } finally {
         try {
-
-            for (var _iterator = json.data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var data = _step.value;
-
-
-                dataElement.innerHTML += '\n\n            <div class="data__item">\n              <div class="data__header">\n              <h2 class="data__title">' + data.CodigoProyecto + ' ' + data.Proyecto + '</h2><i class="data__icon"></i>\n              </div>\n              <div class="data__info">\n              \n            <!--Datos proyecto-->\n            \n              <div class="data__text">Fecha Aprobaci\xF3n ' + data.inicio + '</div>\n              <div class="data__text">Fecha Prevista Fin ' + data.fin + '</div>\n              <div class="data__text">Duraci\xF3n ' + data.duracion + ' d\xEDas</div>\n            </div>\n            ';
+            if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                _iterator2.return();
             }
-        } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
         } finally {
-            try {
-                if (!_iteratorNormalCompletion && _iterator.return) {
-                    _iterator.return();
-                }
-            } finally {
-                if (_didIteratorError) {
-                    throw _iteratorError;
-                }
+            if (_didIteratorError2) {
+                throw _iteratorError2;
             }
         }
-
-        items = [].concat(_toConsumableArray(document.querySelectorAll('.data__info')));
-        icons = [].concat(_toConsumableArray(document.querySelectorAll('.data__icon')));
-
-        /*Si es desktop*/
-    } else {
-        var _iteratorNormalCompletion2 = true;
-        var _didIteratorError2 = false;
-        var _iteratorError2 = undefined;
-
-        try {
-
-            for (var _iterator2 = json.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                var _data = _step2.value;
-
-
-                dataElement.innerHTML += '\n            \n            <div class="dataTable__data">\n            <div class="dataTable__text">' + _data.CodigoProyecto + '</div>\n            <div class="dataTable__text">' + _data.Proyecto + '</div>\n            <div class="dataTable__text">' + _data.inicio + '</div>\n            <div class="dataTable__text">' + _data.fin + '</div>\n            <div class="dataTable__graphic">\n                <div class="graphic" id="' + _data.CodigoProyecto + '"></div>\n            </div>\n          </div>\n            ';
-            }
-        } catch (err) {
-            _didIteratorError2 = true;
-            _iteratorError2 = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                    _iterator2.return();
-                }
-            } finally {
-                if (_didIteratorError2) {
-                    throw _iteratorError2;
-                }
-            }
-        }
-
-        dataElement.innerHTML += '</div>';
     }
 
-    var consultaMenu = function consultaMenu(id) {
-        if (id = 1) {
-            var sql = proyectoSQL;
-        }
-    };
+    items = [].concat(_toConsumableArray(document.querySelectorAll('.data__info')));
+    icons = [].concat(_toConsumableArray(document.querySelectorAll('.data__icon')));
 
-    /*Array para objetos con los id y las duraciones*/
-    var durationsObj = [];
+    /*Si es desktop*/
 
     /*Array de duraciones para calcular las más larga*/
     var allDurations = [];
 
     /*Copio en el array los id y duraciones de cada objeto*/
     for (var i = 0; i < json.data.length; i++) {
-
-        durationsObj[i] = {
-            id: json.data[i].CodigoProyecto,
-            duration: json.data[i].duracion
-        };
 
         /*Añado duraciones al array*/
         allDurations.push(json.data[i].duracion);
@@ -141,105 +240,13 @@ var respuesta = function respuesta(xhr) {
         graphic.textContent = (width.toFixed(2).endsWith('00') ? width.toFixed(0) : width.toFixed(2)) + '%';
     };
 
-    /*Por cada objeto calculo el ancho para dibujarlo*/
-    var _iteratorNormalCompletion3 = true;
-    var _didIteratorError3 = false;
-    var _iteratorError3 = undefined;
+    console.log(maxDuration);
+};
 
-    try {
-        for (var _iterator3 = durationsObj[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-            var _data2 = _step3.value;
-
-            graphicWidth(_data2.id, _data2.duration);
-        }
-    } catch (err) {
-        _didIteratorError3 = true;
-        _iteratorError3 = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion3 && _iterator3.return) {
-                _iterator3.return();
-            }
-        } finally {
-            if (_didIteratorError3) {
-                throw _iteratorError3;
-            }
-        }
+var consultaMenu = function consultaMenu(id) {
+    if (id = 1) {
+        var sql = proyectoSQL;
     }
 };
 
 dataGet("proyecto");
-
-/*################################CALENDARIO####################################*/
-/*CALENDARIO*/
-
-/*Elementos HTML*/
-
-/*Obtener fechas*/
-var monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-var currentDate = new Date();
-var currentDay = currentDate.getDate();
-var monthNumber = currentDate.getMonth();
-var currentYear = currentDate.getFullYear();
-
-/*duración prueba*/
-var duration = 299;
-
-/*Saber total de días de cada mes*/
-var getTotalDays = function getTotalDays(month) {
-
-    if (month === 0 || month === 2 || month === 4 || month === 6 || month === 7 || month === 9 || month === 11) {
-        return 31;
-    } else if (month === 3 || month === 5 || month === 8 || month === 10) {
-        return 30;
-    } else {
-
-        return isLeap() ? 29 : 28;
-    }
-};
-
-/*Bisiesto true/false*/
-var isLeap = function isLeap() {
-    return currentYear % 100 !== 0 && currentYear % 4 === 0 || currentYear % 400 === 0;
-};
-
-console.log(months);
-
-var writeMonth = function writeMonth(name, days) {
-    months.innerHTML += '\n            <div class="month">\n                <div class="month__name">' + name + '</div>\n                <div class="month__days">' + days.join(' ') + '</div>\n            </div>';
-};
-
-var startDay = function startDay() {
-    var init = currentDay - 17;
-    var start = 0;
-    if (init <= 0) {
-        start = getTotalDays(monthNumber) - Math.abs(init);
-        monthNumber -= 1;
-    } else {
-        start = init;
-    }
-
-    return start;
-};
-
-var getDaysToPrint = function getDaysToPrint() {
-    var dayToPrint = startDay();
-    var daysArray = [];
-
-    for (var i = 0; i < 300; i++) {
-
-        var endMonth = getTotalDays(monthNumber);
-
-        if (dayToPrint <= endMonth) {
-            daysArray.push(dayToPrint);
-            dayToPrint++;
-        } else {
-            writeMonth(monthNames[monthNumber], daysArray);
-            daysArray = [];
-            monthNumber++;
-            dayToPrint = 1;
-        }
-    }
-};
-
-getDaysToPrint();

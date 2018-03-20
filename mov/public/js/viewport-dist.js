@@ -1,0 +1,1 @@
+"use strict";var mediumBp=matchMedia("min-width:360px"),changeSize=function(e){console.log(e.matches)};mediumBp.addListener(changeSize),changeSize(mediumBp);

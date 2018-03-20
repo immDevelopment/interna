@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+    <div class="darkMenu" id="darkMenu"></div>
     <header class="header">
       <div class="top-bar">
         <div class="icon-menu" id="icon-menu">
@@ -36,42 +37,52 @@
       <!--h1.title Planificación De Proyectos-->
       <!--Contenedor de los datos recibidos-->
       <div class="data" id="data">
-        <div class="dataTable">
-          <div class="dataTable__header">
-            <div class="dataTable__text">ID proyecto</div>
-            <div class="dataTable__text">Proyecto</div>
-            <div class="dataTable__text">Fecha Aprobación</div>
-            <div class="dataTable__text">Fecha Fin</div>
-            <div class="dataTable__graphic">
-              <div class="months" id="months"></div>
+        <div class="data-container">
+          <div class="project" id="project">
+            <div class="project__item project__header">
+              <div class="project__data">Código</div>
+              <div class="project__data">Proyecto</div>
+              <div class="project__data">Inicio</div>
+              <div class="project__data">Fin</div>
             </div>
+          </div>
+          <div class="graphic-container">
+            <div class="graphic-container__months" id="months"></div>
+            <div class="graphic-container__graphic"></div>
+            <div class="days" id="days"></div>
+            <div class="cells" id="cells"></div>
           </div>
         </div>
       </div>
-      <!--Contenedor de los datos recibidos-->
+      <!--Contenedor de los datos recibidos para movil-->
       <div class="data-filter" id="dataFilter">
         <div class="data-filter__item" id="delegation">
           <h2 class="data-filter__title">Delegación</h2>
-          <label for="delegationAll">Todos</label>
-          <input type="checkbox" id="delegationAll" name="delegationAll">
-          <label for="delegationChev">Chev</label>
-          <input type="checkbox" id="delegationChev" name="delegationChev">
+          <select id="delegationSelect" name="delegationSelect">
+            <option value="sant">Sant</option>
+            <option value="sego">Sego</option>
+            <option value="niss">Niss</option>
+          </select>
         </div>
         <div class="data-filter__item" id="state">
           <h2 class="data-filter__title">Estado Proyecto</h2>
-          <label for="stateAll">Todos</label>
-          <input type="checkbox" id="stateAll" name="stateAll">
-          <label for="stateProspect">Prospect/Abierto</label>
-          <input type="checkbox" id="stateProspect" name="stateProspect">
+          <select id="stateSelect" name="stateSelect">
+            <option value="prospect">Prospect/Abierto</option>
+            <option value="visita">Visita Técnica</option>
+            <option value="desarrollo">Desarrollo PTC</option>
+          </select>
         </div>
-        <div class="data-filter__item" id="province">
-          <h2 class="data-filter__title">Provincia</h2>
-          <label for="provinceAll">Todas</label>
-          <input type="checkbox" id="provinceAll" name="provinceAll">
-          <label for="provinceProspect">A Coruña</label>
-          <input type="checkbox" id="provinceProspect" name="provinceProspect">
+        <div class="data-filter__item" id="projectCode">
+          <h2 class="data-filter__title">Código Proyecto</h2>
+          <select id="codeSelect" name="codeSelect">
+            <option value="720170054">720170054</option>
+            <option value="720170094">720170094</option>
+            <option value="720170105">720170105</option>
+          </select>
         </div>
-        <button class="data-filter__button" id="dataFilterButton">Consultar</button>
+        <div class="data-filter__button">
+          <button id="dataFilterButton">Consultar</button>
+        </div>
         <!--.results
         .results__item
             .results__title Proyecto de prueba
@@ -104,6 +115,5 @@
     <script src="js/tabs-dist.js"></script>
     <script src="js/planificacion-dist.js"></script>
     <script src="js/project-dist.js"></script>
-    <script src="js/writeCalendar-dist.js"></script>
   </body>
 </html>

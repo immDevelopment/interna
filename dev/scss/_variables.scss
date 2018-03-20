@@ -9,6 +9,11 @@ $text-color:#53575A;
 $borderColor:#DFE0E0;
 $bg-color:#FCFCFC;
 
+$white: rgba(254,255,250,1);
+$grey: rgba(220,231,235,1);
+$red: rgba(255,104,115,1);
+$black: rgba(48,69,92,0.8);
+
 /*Fuentes*/
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400');
 $main-font: 'Roboto Slab', serif;
@@ -19,6 +24,3 @@ $font-regular:400;
 $main-title: 'Montserrat', sans-serif;
 $title-regular: 400;
 $title-bold: 600;
-
-/*Anchos*/
-$top-bar-height:40px

@@ -2,9 +2,9 @@ $height:3px;
 
 .top-bar{
   height: $top-bar-height;
-  background: $main-color;
+  background: $grey;
 
-  @media (min-width: 768px){
+  @media (min-width: 1025px){
     display: none;
   }
 }
@@ -22,7 +22,7 @@ $height:3px;
     width: 30px;
     height: $height;
     border-radius: $height/2;
-    background: $ex-color-2;
+    background: $dark-color;
 
     &:after, &:before{
       content: '';
@@ -31,7 +31,7 @@ $height:3px;
       height: $height;
       border-radius: $height/2;
       left: 0;
-      background: $ex-color-2;
+      background: $dark-color;
     }
 
     &:after{
@@ -43,7 +43,7 @@ $height:3px;
     }
 
 
-    @media (min-width: 768px){
+    @media (min-width: 1025px){
       display: none;
     }
 
@@ -53,12 +53,13 @@ $height:3px;
 .main-menu{
   position: absolute;
   list-style: none;
-  background: $main-color;
+  background: $grey;
   margin: 0;
-  padding: .5em;
+  padding: .5em 3em;
   left: -100%;
-  transition: left .5s;
+  transition: left .2s;
   text-transform: capitalize;
+  z-index: 200;
 
   &__item{
     padding: .8em 0;
@@ -68,11 +69,26 @@ $height:3px;
     left: 0;
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 1025px){
     position: relative;
     display: flex;
     justify-content: space-evenly;
     left: 0;
     margin-bottom: .5em;
+  }
+}
+
+.darkMenu{
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(black,.4);
+  transition: right .2s;
+  z-index:100;
+
+  &--hide{
+  right: 0;
   }
 }

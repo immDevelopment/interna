@@ -1,7 +1,6 @@
 extends templates/template
 
 block main
-
     .project-select#project-select
         h1.project-select__item#projects Planificación
         h1.project-select__item#projects-filter Proyectos
@@ -10,40 +9,45 @@ block main
 
     //Contenedor de los datos recibidos
     .data#data
-        .dataTable
-            .dataTable__header
-                .dataTable__text ID proyecto
-                .dataTable__text Proyecto
-                .dataTable__text Fecha Aprobación
-                .dataTable__text Fecha Fin
-                .dataTable__graphic
-                    .months#months
+        .data-container
+            .project#project
+                .project__item.project__header
+                    .project__data Código
+                    .project__data Proyecto
+                    .project__data Inicio
+                    .project__data Fin
 
-    //Contenedor de los datos recibidos
+            .graphic-container
+                .graphic-container__months#months
+                .graphic-container__graphic
+                .days#days
+                .cells#cells
+
+    //Contenedor de los datos recibidos para movil
     .data-filter#dataFilter
-
         .data-filter__item#delegation
             h2.data-filter__title Delegación
-            label(for='delegationAll') Todos
-            input(type='checkbox' id='delegationAll' name='delegationAll')
-            label(for='delegationChev') Chev
-            input(type='checkbox' id='delegationChev' name='delegationChev')
+            select(id='delegationSelect' name='delegationSelect')
+                option(value='sant') Sant
+                option(value='sego') Sego
+                option(value='niss') Niss
 
         .data-filter__item#state
             h2.data-filter__title Estado Proyecto
-            label(for='stateAll') Todos
-            input(type='checkbox' id='stateAll' name='stateAll')
-            label(for='stateProspect') Prospect/Abierto
-            input(type='checkbox' id='stateProspect' name='stateProspect')
+            select(id='stateSelect' name='stateSelect')
+                option(value='prospect') Prospect/Abierto
+                option(value='visita') Visita Técnica
+                option(value='desarrollo') Desarrollo PTC
 
-        .data-filter__item#province
-            h2.data-filter__title Provincia
-            label(for='provinceAll') Todas
-            input(type='checkbox' id='provinceAll' name='provinceAll')
-            label(for='provinceProspect') A Coruña
-            input(type='checkbox' id='provinceProspect' name='provinceProspect')
+        .data-filter__item#projectCode
+            h2.data-filter__title Código Proyecto
+            select(id='codeSelect' name='codeSelect')
+                option(value='720170054') 720170054
+                option(value='720170094') 720170094
+                option(value='720170105') 720170105
 
-        button.data-filter__button#dataFilterButton Consultar
+        .data-filter__button
+            button#dataFilterButton Consultar
 
         //.results
             .results__item

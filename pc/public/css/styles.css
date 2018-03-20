@@ -3,7 +3,6 @@
 /*Fuentes*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
-/*Anchos*/
 body {
   margin: 0;
   /*background: url('../img/bg.jpg');*/
@@ -167,14 +166,20 @@ a {
   .graphic-container__graphic {
     width: 300%; }
 
-.days, .cells {
+.days {
   display: grid;
-  grid-template-columns: repeat(299, 30px); }
+  grid-template-columns: repeat(400, 30px); }
+
+.cells__item {
+  display: grid;
+  grid-template-columns: repeat(299, 30px);
+  margin: 8px 0;
+  padding: 0; }
 
 .cell {
   width: 30px;
   height: 20px;
-  background: orange; }
+  background: #622451; }
   .cell:last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -187,7 +192,40 @@ a {
     content: '';
     position: absolute;
     top: 1.2em;
-    left: 2px;
+    left: 7px;
     width: 2px;
-    height: 200px;
+    height: 100vh;
     background: blue; }
+
+/*Contenedor inferior de los datos*/
+.dataFilter {
+  overflow: auto; }
+  .dataFilter__filter .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    width: 30%; }
+
+.results__header, .results__data {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 3fr repeat(5, 1fr) 3fr 2fr 2fr 2fr repeat(7, 1fr);
+  text-align: center; }
+
+.results__data {
+  margin-top: 0; }
+
+.results__item {
+  font-size: .8em;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }

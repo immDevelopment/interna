@@ -1,21 +1,18 @@
-@charset "UTF-8";
 /*Colores*/
 /*Fuentes*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
-/*Anchos*/
 body {
   margin: 0;
   /*background: url('../img/bg.jpg');*/
   background: #f1fbff;
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 h1 {
   font-size: 1.5em;
   text-align: center; }
 
 a {
-  color: #282D31;
   text-decoration: none;
   cursor: pointer;
   font-weight: bold; }
@@ -25,9 +22,6 @@ a {
 .top-bar {
   height: 40px;
   background: #dce7eb; }
-  @media (min-width: 1025px) {
-    .top-bar {
-      display: none; } }
 
 .icon-menu {
   width: 40px;
@@ -60,9 +54,6 @@ a {
       top: .5em; }
     .icon-menu__bar:before {
       top: -.5em; }
-    @media (min-width: 1025px) {
-      .icon-menu__bar {
-        display: none; } }
 
 .main-menu {
   position: absolute;
@@ -80,17 +71,6 @@ a {
     padding: .8em 0; }
   .main-menu--show {
     left: 0; }
-  @media (min-width: 1025px) {
-    .main-menu {
-      position: relative;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-      justify-content: space-evenly;
-      left: 0;
-      margin-bottom: .5em; } }
 
 .darkMenu {
   position: absolute;
@@ -121,9 +101,6 @@ a {
     padding: .8em;
     background: lightblue;
     font-size: 1em; }
-  @media (min-width: 1025px) {
-    .project-select {
-      display: none; } }
 
 * {
   -webkit-box-sizing: border-box;
@@ -131,63 +108,81 @@ a {
   margin: 0;
   padding: 0; }
 
-/*Div general que contiene los proyectos y el gráfico*/
-.data-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-/*Div con el nombre y la información del proyecto*/
-.project {
-  width: 45%;
-  /*Cada uno de los proyectos y la cabecera de los proyectos*/ }
-  .project__item {
-    display: grid;
-    grid-template-columns: 10% 50% 20% 20%;
-    justify-items: center;
-    padding: .3em 1em;
-    /*Cabecera de los proyectos. Código | Proyecto |...*/ }
-    .project__item:first-child {
-      /*Margen para salvar la distancia de la cabecera de los meses*/
-      margin-top: 2em; }
-
-/*Contenedor general del div de los gráficos*/
-.graphic-container {
-  width: 55%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  /*Cabecera con el nombre de los meses*/
-  /*Div que contiene los días y los gráficos*/ }
-  .graphic-container__months {
+.dataAccordion {
+  display: none;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 100px; }
+  .dataAccordion__item {
+    position: relative;
+    background: #FC9D9A;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 1em;
-    margin-bottom: .5em; }
-  .graphic-container__graphic {
-    width: 300%; }
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 1em; }
+  .dataAccordion__title {
+    cursor: pointer;
+    width: 100%;
+    text-align: center; }
+  .dataAccordion__h2 {
+    margin-top: 0;
+    padding: .5em; }
+  .dataAccordion__info {
+    text-align: center;
+    padding-bottom: 1em;
+    display: none; }
+  .dataAccordion__data {
+    font-size: 1.2em;
+    line-height: 2; }
 
-.days, .cells {
-  display: grid;
-  grid-template-columns: repeat(299, 30px); }
+.dataFilter {
+  display: block;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px; }
 
-.cell {
-  width: 30px;
-  height: 20px;
-  background: orange; }
-  .cell:last-child {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: 15px; }
+.form {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .form__label {
+    display: block;
+    font-size: 1.3em;
+    margin: .5em 0; }
+  .form__field {
+    width: 30%; }
+  .form__submit {
+    padding: .3em .5em;
+    margin-top: 2em;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    display: block; }
 
-.today {
-  color: orangered;
-  position: relative; }
-  .today:after {
-    content: '';
-    position: absolute;
-    top: 1.2em;
-    left: 2px;
-    width: 2px;
-    height: 200px;
-    background: blue; }
+.result {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  border: 1px solid black; }
+  .result__data {
+    font-size: 1.3em;
+    text-align: center;
+    padding: 1em 0; }

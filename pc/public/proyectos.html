@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proyectos | IMM</title>
+    <meta charset="utf-8">
+    <meta name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="darkMenu" id="darkMenu"></div>
+    <header class="header">
+      <div class="top-bar">
+        <div class="icon-menu" id="icon-menu">
+          <div class="icon-menu__bar"></div>
+        </div>
+      </div>
+      <nav class="main-nav" id="main-nav">
+        <ul class="main-menu" id="main-menu"><a class="main-menu__link" href="proyectos.html">
+            <li class="main-menu__item">proyectos</li></a><a class="main-menu__link" href="visitas.html">
+            <li class="main-menu__item">visitas</li></a><a class="main-menu__link" href="fotomontaje.html">
+            <li class="main-menu__item">fotomontaje</li></a><a class="main-menu__link" href="incidenciasINC.html">
+            <li class="main-menu__item">incidencias INC</li></a><a class="main-menu__link" href="incidenciasADM.html">
+            <li class="main-menu__item">incidencias ADM</li></a><a class="main-menu__link" href="mapa.html">
+            <li class="main-menu__item">mapa</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <!--Contenedor de los datos recibidos-->
+      <div class="data" id="data">
+        <div class="data-container">
+          <div class="project" id="project">
+            <div class="project__item project__header">
+              <div class="project__data">Código</div>
+              <div class="project__data">Proyecto</div>
+              <div class="project__data">Inicio</div>
+              <div class="project__data">Fin</div>
+            </div>
+          </div>
+          <div class="graphic-container">
+            <div class="graphic-container__months" id="months"></div>
+            <div class="graphic-container__graphic"></div>
+            <div class="days" id="days"></div>
+            <div class="cells" id="cells"></div>
+          </div>
+        </div>
+      </div>
+      <!--Contenedor inferior de todos los proyectos-->
+      <div class="dataFilter">
+        <div class="dataFilter__filter">
+          <form class="form" action="#" method="get">
+            <div class="form__field">
+              <label class="form__label" for="filter-delegacion">Delegación</label>
+              <select class="form__select" id="filter-delegacion" name="filter-delegacion">
+                <option value="opción-1">Opción 1</option>
+                <option value="opción-2">Opción 2</option>
+                <option value="opción-3">Opción 3</option>
+                <option value="opción-4">Opción 4</option>
+                <option value="opción-5">Opción 5</option>
+              </select>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="filter-estado">Estado</label>
+              <select class="form__select" id="filter-estado" name="filter-estado">
+                <option value="opción-1">Opción 1</option>
+                <option value="opción-2">Opción 2</option>
+                <option value="opción-3">Opción 3</option>
+                <option value="opción-4">Opción 4</option>
+                <option value="opción-5">Opción 5</option>
+              </select>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="filter-codigo">Código</label>
+              <select class="form__select" id="filter-codigo" name="filter-codigo">
+                <option value="opción-1">Opción 1</option>
+                <option value="opción-2">Opción 2</option>
+                <option value="opción-3">Opción 3</option>
+                <option value="opción-4">Opción 4</option>
+                <option value="opción-5">Opción 5</option>
+              </select>
+            </div>
+            <input class="form__submit" type="submit" value="Consulta">
+          </form>
+          <div class="results">
+            <div class="results__header">
+              <div class="results__item">Id Delegación</div>
+              <div class="results__item">Estado Proyecto</div>
+              <div class="results__item">Código Proyecto</div>
+              <div class="results__item">Proyecto</div>
+              <div class="results__item">F. Inicial</div>
+              <div class="results__item">F. Aprobación</div>
+              <div class="results__item">F. Prev Montaje</div>
+              <div class="results__item">Sem</div>
+              <div class="results__item">F Montaje</div>
+              <div class="results__item">Razón Social</div>
+              <div class="results__item">Domicilio</div>
+              <div class="results__item">Municipio</div>
+              <div class="results__item">Provincia</div>
+              <div class="results__item">C.P.</div>
+              <div class="results__item">Base Imponible</div>
+              <div class="results__item">Facturado</div>
+              <div class="results__item">IMG Visita</div>
+              <div class="results__item">IMG Foto-Montajes</div>
+              <div class="results__item">IMG Montajes</div>
+              <div class="results__item">IMG Incidencias</div>
+            </div>
+            <div class="results__data">
+              <div class="results__item">SANT</div>
+              <div class="results__item">01.- Prospect / Abierto</div>
+              <div class="results__item">720170054</div>
+              <div class="results__item">SANTANDER AQUANIMA ROTULOS 2017</div>
+              <div class="results__item">04/04/2017</div>
+              <div class="results__item">...</div>
+              <div class="results__item">...</div>
+              <div class="results__item">...</div>
+              <div class="results__item">...</div>
+              <div class="results__item">BANCO SANTANDER S.A</div>
+              <div class="results__item">PS/PEREDA, 9-12</div>
+              <div class="results__item">SANTANDER</div>
+              <div class="results__item">CANTABRIA</div>
+              <div class="results__item">39004</div>
+              <div class="results__item">0.00€</div>
+              <div class="results__item">...</div>
+              <div class="results__item">...</div>
+              <div class="results__item">...</div>
+              <div class="results__item">...</div>
+              <div class="results__item">...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+    <script src="js/data-dist.js"></script>
+  </body>
+</html>

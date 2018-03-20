@@ -1,115 +1,80 @@
-.data{
-  width: 100%;
-
-  &__item {
-    margin: 2em 0;
-    padding: 0;
-  }
-
-  &__header{
-    display: flex;
-    justify-content:space-between;
-    width: 90%;
-    margin: auto;
-    background: #ccc;
-  }
-
-  &__icon{
-    width: 70px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    cursor: pointer;
-    transform-origin: center;
-    transition: transform .2s;
-
-    &:after{
-      content: '\25BC';
-      font-size: 1.5em;
-      align-self: center;
-    }
-
-    &--rotate{
-      transform: rotateX(180deg);
-    }
-  }
-
-  &__title{
-    font-size: 1.1em;
-    margin-left: 1em;
-    padding: .3em;
-  }
-  
-
-  &__info{
-    height: 0;
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
-    transition: all .3s;
-    background: #ccc;
-
-    &--show{
-      height: 150px;
-    }
-  }
-
-  &__text{
-    padding: .5em 1em;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.dataTable{
-  display: none;
-
-  @media (min-width: 1080px){
-    display: block;
-  }
-
-  &__header, &__data{
-    display: grid;
-    grid-template-columns: 100px 300px 200px 100px 1fr;
-    grid-template-rows: 20px;
-    align-items: center;
-    text-align: center;
-  }
-
-  &__header{
-    background: $third-color;
-    padding: 1em 0;
-  }
-
-  &__data:nth-child(even){
-    background: lightgray;
-  }
-  &__data:nth-child(odd){
-    background: whitesmoke;
-  }
-
-  &__text{
-    color: $dark-color;
-    font-weight: bold;
-  }
-
-  &__graphic{
-    display: grid;
-
-  }
-}
-
-.graphic{
-  text-align: left;
-}
-
-.months{
+/*Div general que contiene los proyectos y el gráfico*/
+.data-container {
   display: flex;
-  align-items: center;
-  width: 100%;
-  overflow: auto;
 }
 
-.month{
-  text-align: center;
-  display: table;
-  font-size: .7em;
+/*Div con el nombre y la información del proyecto*/
+.project {
+  width: 45%;
+
+  /*Cada uno de los proyectos y la cabecera de los proyectos*/
+  &__item {
+    display: grid;
+    grid-template-columns: 10% 50% 20% 20%;
+    justify-items: center;
+    padding: .3em 1em;
+
+    /*Cabecera de los proyectos. Código | Proyecto |...*/
+    &:first-child {
+      /*Margen para salvar la distancia de la cabecera de los meses*/
+      margin-top: 2em;
+    }
+  }
+}
+
+/*Contenedor general del div de los gráficos*/
+.graphic-container {
+  width: 55%;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  /*Cabecera con el nombre de los meses*/
+  &__months {
+    display: flex;
+    margin-top: 1em;
+    margin-bottom: .5em;
+  }
+
+  /*Div que contiene los días y los gráficos*/
+  &__graphic {
+    width: 300%; //Dinámico en función de la máxima duración
+  }
+}
+
+.days, .cells {
+  display: grid;
+  grid-template-columns: repeat(299, 30px); //Máxima duración, ancho de cada día
+}
+
+.cell {
+  width: 30px;
+  height: 20px;
+  background: orange;
+
+  &:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 15px;
+  }
+}
+
+.today {
+  color: orangered;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 1.2em;
+    left: 2px;
+    width: 2px;
+    height: 200px;
+    background: blue;
+  }
 }

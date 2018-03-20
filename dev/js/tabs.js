@@ -7,11 +7,11 @@ projectSelect.addEventListener('click', (e)=>{
     if(e.target.tagName === 'H1') {
 
         if (e.target.id === 'projects') {
-            data.style.display = 'block';
+            data.style.display = 'grid';
             dataFilter.style.display = 'none';
         } else if(e.target.id === 'projects-filter') {
             data.style.display = 'none';
-            dataFilter.style.display = 'block';
+            dataFilter.style.display = 'flex';
         }
     }
 

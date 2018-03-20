@@ -1,8 +1,82 @@
+/*######################JSON###########################################*/
+
+// objeto XMLHttpRequest
+let xhr = new XMLHttpRequest();
+
+let maxDuration=0;
+
+let months = document.getElementById('months');
+
+const assignMaxDuration = (duration) => {
+    maxDuration = duration;
+};
+
+// Obtenemos datos
+const getData = (get) => {
+
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            respuesta(xhr);
+        }
+    };
+
+    xhr.open('GET', 'php/planificacion.php?tsql=' + get, true);
+    xhr.send();
+};
+
+// Se imprimen los datos
+const respuesta = (xhr) => {
+
+    let json = JSON.parse(xhr.responseText);
+
+    console.log(json);
+
+    let projectElement = document.getElementById('project');
+
+    for (let data of json.data) {
+
+        projectElement.innerHTML += `
+            <div class="project__item">
+              <div class="project__data">${data.CodigoProyecto}</div>
+              <div class="project__data">${data.Proyecto}</div>
+              <div class="project__data">${data.inicio}</div>
+              <div class="project__data">${data.fin}</div>
+            </div>
+            `;
+
+        writeCells(data.duracion);
+    }
+
+    /*Array de duraciones para calcular las más larga*/
+    let allDurations = [];
+
+    /*Copio en el array los id y duraciones de cada objeto*/
+    for (let i = 0; i < json.data.length; i++) {
+
+        /*Añado duraciones al array*/
+        allDurations.push(json.data[i].duracion);
+    }
+
+    /*Calculo la máxima duración*/
+    assignMaxDuration(Math.max(...allDurations));
+};
+
+
+
+const consultaMenu = (id) => {
+    if (id === 1) {
+        let sql = proyectoSQL;
+    }
+};
+
+getData("proyecto");
+
 /*################################CALENDARIO####################################*/
 
 /*CALENDARIO*/
 /*Variables para imprimir el nombre de los meses*/
 let monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+let monthNamesShort = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
 
 /*Contenedor donde escribir los nombres de los meses*/
 const monthElement = document.getElementById('months');
@@ -70,13 +144,18 @@ const writeDays = (days, month) => {
 };
 
 /*Escribo las celdas para dibujar el gráfico*/
-const writeCells = (id, duration) => {
+const writeCells = (duration) => {
+
+    let newGraphic = document.createElement('div');
+    newGraphic.setAttribute('class', 'cells__item');
 
     for (let i = 0; i < duration; i++) {
-        cellsElement.innerHTML += `
+        newGraphic.innerHTML += `
             <span class="cell"></span>
         `;
     }
+
+    cellsElement.appendChild(newGraphic);
 };
 
 /*Saber en qué día comienza el gráfico*/
@@ -102,7 +181,7 @@ const getDaysToPrint = () => {
     let daysArray = [];
 
     /*Bucle que da tantas vueltas como máxima duración haya*/
-    for (let i = 0; i < 300; i++) {
+    for (let i = 0; i < 299; i++) {
         /*Fin del mes*/
         let endMonth = getTotalDays(currentMonth);
 
@@ -112,10 +191,14 @@ const getDaysToPrint = () => {
             dayToPrint++;
 
             /*Si es el último día del mes envío el array a imprimir, vacío el array, sumo un mes para imprimir el siguiente y reinicio el día a imprimir a 1*/
+
         } else {
+
             writeDays(daysArray, currentMonth);
             /*Escribo el nombre del mes en la cabecera del gráfico*/
-            writeMonth(monthNames[currentMonth], daysArray.length);
+
+            /*Si es el final del mes sólo escribo las iniciales para que no ocupe mucho*/
+            (daysArray.length<3) ? writeMonth(monthNamesShort[currentMonth], daysArray.length) : writeMonth(monthNames[currentMonth], daysArray.length);
             daysArray = [];
             currentMonth++;
             dayToPrint = 1;
@@ -131,103 +214,3 @@ const getWidthElement = (element, padding) => {
 };
 
 getDaysToPrint();
-
-/*######################JSON###########################################*/
-
-// objeto XMLHttpRequest
-let xhr = new XMLHttpRequest();
-
-let maxDuration;
-
-let months = document.getElementById('months');
-
-const assignMaxDuration = (duration) => {
-    maxDuration = duration;
-};
-
-// Obtenemos datos
-const dataGet = (get) => {
-
-    xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            respuesta(xhr);
-        }
-    };
-
-    xhr.open('GET', 'php/planificacion.php?tsql=' + get, true);
-    xhr.send();
-};
-
-// Se imprimen los datos
-const respuesta = (xhr) => {
-
-    let json = JSON.parse(xhr.responseText);
-
-    console.log(json);
-
-    let projectElement = document.getElementById('projects');
-
-    for (let data of json.data) {
-
-        projectElement.innerHTML += `
-
-            <div class="data__item">
-              <div class="data__header">
-              <h2 class="data__title">${data.CodigoProyecto} ${data.Proyecto}</h2><i class="data__icon"></i>
-              </div>
-              <div class="data__info">
-              
-            <!--Datos proyecto-->
-            
-              <div class="data__text">Fecha Aprobación ${data.inicio}</div>
-              <div class="data__text">Fecha Prevista Fin ${data.fin}</div>
-              <div class="data__text">Duración ${data.duracion} días</div>
-            </div>
-            `;
-    }
-}
-
-    items = [...document.querySelectorAll('.data__info')];
-    icons = [...document.querySelectorAll('.data__icon')];
-
-    /*Si es desktop*/
-
-    /*Array de duraciones para calcular las más larga*/
-    let allDurations = [];
-
-    /*Copio en el array los id y duraciones de cada objeto*/
-    for (let i = 0; i < json.data.length; i++) {
-
-        /*Añado duraciones al array*/
-        allDurations.push(json.data[i].duracion);
-    }
-
-    /*Calculo la máxima duración*/
-    assignMaxDuration(Math.max(...allDurations));
-
-    /*Función para calcular el ancho del gráfico*/
-    const graphicWidth = (id, duration) => {
-
-        let graphic = document.getElementById(id);
-
-        /*Calculo de la anchura*/
-        let width = (duration * 100) / maxDuration;
-
-        graphic.style.width = `${width}%`;
-
-        /*Porcentaje en el gráfico si tiene 00 no salen*/
-        graphic.textContent = `${(width.toFixed(2).endsWith('00')) ? width.toFixed(0) : width.toFixed(2)}%`;
-    };
-
-    console.log(maxDuration);
-
-};
-
-const consultaMenu = (id) => {
-    if (id = 1) {
-        let sql = proyectoSQL;
-    }
-};
-
-dataGet("proyecto");
-
