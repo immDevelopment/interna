@@ -1,0 +1,74 @@
+extends templates/template
+
+block main
+    .project-select#project-select
+        h1.project-select__item#projects Planificación
+        h1.project-select__item#projects-filter Proyectos
+    //Bloque principal de proyectos
+    //h1.title Planificación De Proyectos
+
+    //Contenedor de los datos recibidos
+    .data#data
+        .data-container
+            .project#project
+                .project__item.project__header
+                    .project__data Código
+                    .project__data Proyecto
+                    .project__data Inicio
+                    .project__data Fin
+
+            .graphic-container
+                .graphic-container__months#months
+                .graphic-container__graphic
+                .days#days
+                .cells#cells
+
+    //Contenedor de los datos recibidos para movil
+    .data-filter#dataFilter
+        .data-filter__item#delegation
+            h2.data-filter__title Delegación
+            select(id='delegationSelect' name='delegationSelect')
+                option(value='sant') Sant
+                option(value='sego') Sego
+                option(value='niss') Niss
+
+        .data-filter__item#state
+            h2.data-filter__title Estado Proyecto
+            select(id='stateSelect' name='stateSelect')
+                option(value='prospect') Prospect/Abierto
+                option(value='visita') Visita Técnica
+                option(value='desarrollo') Desarrollo PTC
+
+        .data-filter__item#projectCode
+            h2.data-filter__title Código Proyecto
+            select(id='codeSelect' name='codeSelect')
+                option(value='720170054') 720170054
+                option(value='720170094') 720170094
+                option(value='720170105') 720170105
+
+        .data-filter__button
+            button#dataFilterButton Consultar
+
+        //.results
+            .results__item
+                .results__title Proyecto de prueba
+                .results__title Id Delegación
+                .results__title Estado Proyecto
+                .results__title Codigo Proyecto
+                .results__title Proyecto
+                .results__title Fecha Inicial
+                .results__title Fecha Aprobación
+                .results__title Fecha Prevista Montaje
+                .results__title Semana
+                .results__title Fecha Montaje
+                .results__title Razón Social
+                .results__title Domicilio
+                .results__title Municipio
+                .results__title Provincia
+                .results__title C.P.
+                .results__title Base Imponible
+                .results__title Facturado
+                .results__title IMG Visita
+                .results__title IMG Foto Montajes
+                .results__title IMG Montajes
+                .results__title IMG Incidencias

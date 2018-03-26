@@ -1,0 +1,19 @@
+include ../config/config
+
+ul.main-menu#main-menu
+    each page in pages
+        if page === 'proyectos'
+            a(href= 'index.html').main-menu__link
+                li.main-menu__item #{page}
+
+        else if page==='incidencias INC'
+            a(href= 'incidenciasINC.html').main-menu__link
+                li.main-menu__item #{page}
+
+        else if page === 'incidencias ADM'
+            a(href= 'incidenciasADM.html').main-menu__link
+                li.main-menu__item #{page}
+
+        else
+            a(href= page + '.html').main-menu__link
+                li.main-menu__item #{page}

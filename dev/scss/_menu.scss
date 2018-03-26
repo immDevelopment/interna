@@ -1,0 +1,94 @@
+$height:3px;
+
+.top-bar{
+  height: $top-bar-height;
+  background: $grey;
+
+  @media (min-width: 1025px){
+    display: none;
+  }
+}
+
+.icon-menu{
+  width: 40px;
+  height: $top-bar-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &__bar{
+    position: relative;
+    width: 30px;
+    height: $height;
+    border-radius: $height/2;
+    background: $dark-color;
+
+    &:after, &:before{
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: $height;
+      border-radius: $height/2;
+      left: 0;
+      background: $dark-color;
+    }
+
+    &:after{
+      top: .5em;
+    }
+
+    &:before{
+      top: -.5em;
+    }
+
+
+    @media (min-width: 1025px){
+      display: none;
+    }
+
+  }
+}
+
+.main-menu{
+  position: absolute;
+  list-style: none;
+  background: $grey;
+  margin: 0;
+  padding: .5em 3em;
+  left: -100%;
+  transition: left .2s;
+  text-transform: capitalize;
+  z-index: 200;
+
+  &__item{
+    padding: .8em 0;
+  }
+
+  &--show{
+    left: 0;
+  }
+
+  @media (min-width: 1025px){
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    left: 0;
+    margin-bottom: .5em;
+  }
+}
+
+.darkMenu{
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(black,.4);
+  transition: right .2s;
+  z-index:100;
+
+  &--hide{
+  right: 0;
+  }
+}

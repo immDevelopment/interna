@@ -1,0 +1,26 @@
+/*Colores*/
+$main-color: #ca1498;
+$sec-color:#FE4365;
+$third-color:#83AF9B;
+$ex-color-1:#FC9D9A;
+$ex-color-2:#C8C8A9;
+$dark-color:#282D31;
+$text-color:#53575A;
+$borderColor:#DFE0E0;
+$bg-color:#FCFCFC;
+
+$white: rgba(254,255,250,1);
+$grey: rgba(220,231,235,1);
+$red: rgba(255,104,115,1);
+$black: rgba(48,69,92,0.8);
+
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400');
+$main-font: 'Roboto Slab', serif;
+$font-light: 300;
+$font-regular:400;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+$main-title: 'Montserrat', sans-serif;
+$title-regular: 400;
+$title-bold: 600;

@@ -1,0 +1,23 @@
+.graphic{
+  margin: .2em 0;
+  background: rgba(crimson,.8);
+  border-radius: 5px;
+  /*width: Se asigna desde js*/
+  min-height: 10px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+/*
+.calendar{
+  display: grid;
+  width: 80%;
+  overflow: auto;
+
+  &__months{
+    background: lightblue;
+    display: flex;
+    width: 4700px;
+  }
+}*/

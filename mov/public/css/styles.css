@@ -1,0 +1,188 @@
+/*Colores*/
+/*Fuentes*/
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
+body {
+  margin: 0;
+  /*background: url('../img/bg.jpg');*/
+  background: #f1fbff;
+  overflow-x: hidden; }
+
+h1 {
+  font-size: 1.5em;
+  text-align: center; }
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold; }
+  a:hover {
+    text-decoration: underline; }
+
+.top-bar {
+  height: 40px;
+  background: #dce7eb; }
+
+.icon-menu {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer; }
+  .icon-menu__bar {
+    position: relative;
+    width: 30px;
+    height: 3px;
+    border-radius: 1.5px;
+    background: #282D31; }
+    .icon-menu__bar:after, .icon-menu__bar:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      border-radius: 1.5px;
+      left: 0;
+      background: #282D31; }
+    .icon-menu__bar:after {
+      top: .5em; }
+    .icon-menu__bar:before {
+      top: -.5em; }
+
+.main-menu {
+  position: absolute;
+  list-style: none;
+  background: #dce7eb;
+  margin: 0;
+  padding: .5em 3em;
+  left: -100%;
+  -webkit-transition: left .2s;
+  -o-transition: left .2s;
+  transition: left .2s;
+  text-transform: capitalize;
+  z-index: 200; }
+  .main-menu__item {
+    padding: .8em 0; }
+  .main-menu--show {
+    left: 0; }
+
+.darkMenu {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: right .2s;
+  -o-transition: right .2s;
+  transition: right .2s;
+  z-index: 100; }
+  .darkMenu--hide {
+    right: 0; }
+
+.project-select {
+  width: 85%;
+  margin: 1em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly; }
+  .project-select__item {
+    cursor: pointer;
+    border-radius: .5em;
+    padding: .8em;
+    background: lightblue;
+    font-size: 1em; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.dataAccordion {
+  display: none;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 100px; }
+  .dataAccordion__item {
+    position: relative;
+    background: #FC9D9A;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 1em; }
+  .dataAccordion__title {
+    cursor: pointer;
+    width: 100%;
+    text-align: center; }
+  .dataAccordion__h2 {
+    margin-top: 0;
+    padding: .5em; }
+  .dataAccordion__info {
+    text-align: center;
+    padding-bottom: 1em;
+    display: none; }
+  .dataAccordion__data {
+    font-size: 1.2em;
+    line-height: 2; }
+
+.dataFilter {
+  display: block;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px; }
+
+.form {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .form__label {
+    display: block;
+    font-size: 1.3em;
+    margin: .5em 0; }
+  .form__field {
+    width: 30%; }
+  .form__submit {
+    padding: .3em .5em;
+    margin-top: 2em;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    display: block; }
+
+.result {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  border: 1px solid black; }
+  .result__data {
+    font-size: 1.3em;
+    text-align: center;
+    padding: 1em 0; }

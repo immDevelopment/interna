@@ -1,0 +1,23 @@
+$white: rgba(254,255,250,1);
+$grey: rgba(220,231,235,1);
+$red: rgba(255,104,115,1);
+$black: rgba(48,69,92,0.8);
+
+.project-select{
+  width: 85%;
+  margin: 1em auto;
+  display: flex;
+  justify-content: space-evenly;
+
+  &__item{
+    cursor: pointer;
+    border-radius: .5em;
+    padding: .8em;
+    background: lightblue;
+    font-size: 1em;
+  }
+
+  @media (min-width: 1025px){
+    display: none;
+  }
+}

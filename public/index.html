@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proyectos | IMM</title>
+    <meta charset="utf-8">
+    <meta name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="darkMenu" id="darkMenu"></div>
+    <header class="header">
+      <div class="top-bar">
+        <div class="icon-menu" id="icon-menu">
+          <div class="icon-menu__bar"></div>
+        </div>
+      </div>
+      <nav class="main-nav" id="main-nav">
+        <ul class="main-menu" id="main-menu"><a class="main-menu__link" href="index.html">
+            <li class="main-menu__item">proyectos</li></a><a class="main-menu__link" href="visitas.html">
+            <li class="main-menu__item">visitas</li></a><a class="main-menu__link" href="fotomontaje.html">
+            <li class="main-menu__item">fotomontaje</li></a><a class="main-menu__link" href="incidenciasINC.html">
+            <li class="main-menu__item">incidencias INC</li></a><a class="main-menu__link" href="incidenciasADM.html">
+            <li class="main-menu__item">incidencias ADM</li></a><a class="main-menu__link" href="mapa.html">
+            <li class="main-menu__item">mapa</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="project-select" id="project-select">
+        <h1 class="project-select__item" id="projects">Planificación</h1>
+        <h1 class="project-select__item" id="projects-filter">Proyectos</h1>
+      </div>
+      <!--Bloque principal de proyectos-->
+      <!--h1.title Planificación De Proyectos-->
+      <!--Contenedor de los datos recibidos-->
+      <div class="data" id="data">
+        <div class="data-container">
+          <div class="project" id="project">
+            <div class="project__item project__header">
+              <div class="project__data">Código</div>
+              <div class="project__data">Proyecto</div>
+              <div class="project__data">Inicio</div>
+              <div class="project__data">Fin</div>
+            </div>
+          </div>
+          <div class="graphic-container">
+            <div class="graphic-container__months" id="months"></div>
+            <div class="graphic-container__graphic"></div>
+            <div class="days" id="days"></div>
+            <div class="cells" id="cells"></div>
+          </div>
+        </div>
+      </div>
+      <!--Contenedor de los datos recibidos para movil-->
+      <div class="data-filter" id="dataFilter">
+        <div class="data-filter__item" id="delegation">
+          <h2 class="data-filter__title">Delegación</h2>
+          <select id="delegationSelect" name="delegationSelect">
+            <option value="sant">Sant</option>
+            <option value="sego">Sego</option>
+            <option value="niss">Niss</option>
+          </select>
+        </div>
+        <div class="data-filter__item" id="state">
+          <h2 class="data-filter__title">Estado Proyecto</h2>
+          <select id="stateSelect" name="stateSelect">
+            <option value="prospect">Prospect/Abierto</option>
+            <option value="visita">Visita Técnica</option>
+            <option value="desarrollo">Desarrollo PTC</option>
+          </select>
+        </div>
+        <div class="data-filter__item" id="projectCode">
+          <h2 class="data-filter__title">Código Proyecto</h2>
+          <select id="codeSelect" name="codeSelect">
+            <option value="720170054">720170054</option>
+            <option value="720170094">720170094</option>
+            <option value="720170105">720170105</option>
+          </select>
+        </div>
+        <div class="data-filter__button">
+          <button id="dataFilterButton">Consultar</button>
+        </div>
+        <!--.results
+        .results__item
+            .results__title Proyecto de prueba
+            .results__title Id Delegación
+            .results__title Estado Proyecto
+            .results__title Codigo Proyecto
+            .results__title Proyecto
+            .results__title Fecha Inicial
+            .results__title Fecha Aprobación
+            .results__title Fecha Prevista Montaje
+            .results__title Semana
+            .results__title Fecha Montaje
+            .results__title Razón Social
+            .results__title Domicilio
+            .results__title Municipio
+            .results__title Provincia
+            .results__title C.P.
+            .results__title Base Imponible
+            .results__title Facturado
+            .results__title IMG Visita
+            .results__title IMG Foto Montajes
+            .results__title IMG Montajes
+            .results__title IMG Incidencias
+        -->
+      </div>
+    </main>
+    <footer class="footer"></footer>
+    <script src="js/viewport-dist.js"></script>
+    <script src="js/menu-dist.js"></script>
+    <script src="js/tabs-dist.js"></script>
+    <script src="js/planificacion-dist.js"></script>
+    <script src="js/project-dist.js"></script>
+  </body>
+</html>

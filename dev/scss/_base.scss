@@ -1,0 +1,22 @@
+body{
+  margin: 0;
+  /*background: url('../img/bg.jpg');*/
+  background: #f1fbff;
+  overflow:hidden ;
+}
+
+h1{
+  font-size: 1.5em;
+  text-align: center;
+}
+
+a{
+  color: $dark-color;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
