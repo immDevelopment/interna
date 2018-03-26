@@ -35,6 +35,13 @@ var respuesta = function respuesta(xhr) {
 
     var projectElement = document.getElementById('project');
 
+    /*Saber el código del proyecto donde se hace click*/
+    projectElement.addEventListener('click', function (e) {
+        if (e.target.classList.contains('project__data')) {
+            console.log(e.target.parentNode.childNodes[1].textContent);
+        }
+    });
+
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
     var _iteratorError = undefined;

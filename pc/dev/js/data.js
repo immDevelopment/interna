@@ -33,9 +33,16 @@ const respuesta = (xhr) => {
 
     let projectElement = document.getElementById('project');
 
+    /*Saber el código del proyecto donde se hace click*/
+    projectElement.addEventListener('click', (e)=> {
+        if(e.target.classList.contains('project__data')){
+            console.log(e.target.parentNode.childNodes[1].textContent);
+        }
+    });
+
     for (let data of json.data) {
 
-        projectElement.innerHTML += `
+        projectElement.innerHTML +=`
             <div class="project__item">
               <div class="project__data">${data.CodigoProyecto}</div>
               <div class="project__data">${data.Proyecto}</div>
